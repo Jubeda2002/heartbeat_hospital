@@ -1,0 +1,42 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="/admin/Specialist_update/<%=doctor_info.doctor_id%>" method="post" class="doctor_form" enctype="multipart/form-data">
+            <!-- <h1 class="h3 mb-3"><strong>Add</strong> Doctors Details</h1> -->
+            <h5>Doctor Image</h5>
+            <input type="file" name="doctor_image" class="form-control">
+             <br>       
+            <h5>Doctor Name </h5>
+                 <input type="text" name="doctor_name" class="form-control" value="<%=doctor_info.doctor_name%>" placeholder="Doctor Name">
+                 <br>
+                 <h5>Doctor Position</h5>
+                    <input type="text" name="doctor_position" class="form-control" value="<%=doctor_info.doctor_position%>" placeholder="Doctor Position">
+                    <br>
+                    <h5>Doctor Experience</h5>
+                    <input type="text" name="doctor_experience" class="form-control" value="<%=doctor_info.doctor_experience%>" placeholder="Doctor Experience">
+                    <br>
+                    <h5>Doctor Education</h5>
+                    <input type="text" name="doctor_education" class="form-control" value="<%=doctor_info.doctor_education%>"  placeholder="Doctor Education">
+                    <br>
+                    <h5>Doctor Description</h5>
+                    <textarea name="doctor_description"  value="<%=doctor_info.doctor_description%>"  class="form-control" placeholder="Doctor Description"></textarea>
+                    <br>
+                    <button class="btn btn-lg btn-primary" type="submit">Update Doctor</button>
+            </form>
+            </div>
+        </div>
+        <br>
+
+
+     
+            <%-include("footer.ejs"); %>
+     
+        <!-- CREATE TABLE doctor_team (
+            doctor_id INT AUTO_INCREMENT PRIMARY KEY,
+             doctor_image TEXT,
+            doctor_name VARCHAR(255),
+            doctor_position text,
+            doctor_experience VARCHAR(255),
+            doctor_education text,
+            doctor_description TEXT
+        ) -->

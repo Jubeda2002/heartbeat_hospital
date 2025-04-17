@@ -1,0 +1,93 @@
+<%- include("navbar.ejs"); %>
+
+<div class="row">
+    <div class="col-12">
+        <form action="home_details" method="post" class="home_form" enctype="multipart/form-data">
+            <h1 class="h3 mb-3"><strong>Home</strong> Page Details</h1>
+            <h5>Home Page Title</h5>
+            <input type="text" class="form-control" name="home_title" placeholder="Home Page Title" >
+            <br>
+            <h5>Short Description</h5>
+            <textarea class="form-control" name="home_description" placeholder="Short Description" ></textarea>
+            <br>
+            <h5>Background Image</h5>
+            <input type="file" class="form-control" name="home_image" >
+            <br>
+            <!-- <h5>Background Image</h5>
+            <input type="file" class="form-control" name="home_image_2" >
+            <br>
+            <h5>Background Image</h5>
+            <input type="file" class="form-control" name="home_image_3" >
+            <br> -->
+            <!-- <h5>Award & Winning Patient Care</h5>
+            <input type="text" class="form-control" name="award" placeholder="Award Name" >
+            <br>
+            <h5>Description</h5>
+            <textarea class="form-control" name="award_description" placeholder="Award Description" ></textarea>
+            <br>
+            <h5>Patient Reviews</h5>
+            <input type="text" class="form-control" name="doctor_name" placeholder="Doctor Name" >
+            <br>
+            <p>Patient</p>
+            <input type="text" class="form-control" name="doctor_review" placeholder="Reviews" >
+            <br> -->
+            <button class="btn btn-lg btn-primary " type="submit">Submit</button>
+        </form>
+    </div>			
+</div>	
+<hr>
+<table>
+    <tr>
+        <th>Home ID</th>
+        <th>Home Title</th>
+        <th>Home Description</th>
+        <th>Home Image</th>
+        <!-- <th>Home Image 2</th>
+        <th>Home Image 3</th> -->
+        <!-- <th>Working Schedule</th>
+        <th>Weekend Schedule</th>
+        <th>Emergency Contact</th>
+        <th>Award</th>
+        <th>Award Description</th>
+        <th>Doctor Name</th>
+        <th>Doctor Review</th> -->
+        <th>Action</th>
+    </tr>       
+    <% home_info.map(function(row,i){ %>
+    <tr>
+        <td><%= i+1 %></td>
+        <td><%= row.home_title %></td>
+        <td><%= row.home_description %></td>
+        <td><img src="/admin_assets/home/<%=row.home_image%>" alt="" style="width: 100px;"></td>
+        <!-- <td><img src="/admin_assets/home/<%=row.home_image_2%>" alt="" style="width: 100px;"></td>
+        <td><img src="/admin_assets/home/<%=row.home_image_3%>" alt="" style="width: 100px;"></td> -->
+        <!-- <td><%= row.working_schedule %></td>
+        <td><%= row.weekend_schedule %></td>
+        <td><%= row.emergency_contact %></td>
+        <td><%= row.award %></td>
+        <td><%= row.award_description %></td>
+        <td><%= row.doctor_name %></td>
+        <td><%= row.doctor_review %></td> -->
+        <td>
+            <td>
+                <a href="/admin/home_edit/<%= row.home_id%>" class="btn btn-primary">Edit</a>
+                <a href="/admin/home_delete/<%= row.home_id%>" class="btn btn-danger" 
+                   onclick="return confirm('Are you sure you want to delete this record?');">
+                   Delete
+                </a>
+            </td>
+            
+        </td>   
+    </tr>
+    <% }) %>
+</table>
+
+<%- include("footer.ejs"); %>
+
+<!-- CREATE TABLE home_web(
+    home_id INT AUTO_INCREMENT PRIMARY KEY,
+    home_title VARCHAR(255),
+    home_description TEXT,
+   home_image text
+
+);   -->

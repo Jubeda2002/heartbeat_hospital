@@ -1,0 +1,65 @@
+
+<%-include("navbar.ejs")%>
+<div class="icons">
+ <a href=""><img src="/user_assets/IMAGES/facebook.png" alt=""></a> 
+ <a href=""><img src="/user_assets/IMAGES/insta-removebg-preview.png" alt=""></a> 
+  <a href="">  <img src="/user_assets/IMAGES/whatsapp.png" alt=""></a> 
+</div>
+   
+
+     <section class="appoinment-sec">
+     <div class="guidelines"  data-aos="fade-up-right">
+         <h3>Guidelines for Booking an Appointment</h3>
+         <ul data-aos="fade-up"
+         data-aos-duration="3000"  >
+             <li >Appointments must be booked at least 24 hours in advance.</li>
+             <li >Please carry your ID and medical records for verification.</li>
+             <li >Arrive at least 15 minutes before your scheduled time.</li>
+             <li>For cancellations, notify us at least 6 hours before your appointment.</li>
+             <li >Emergency cases do not require prior appointments.</li>
+         </ul>
+     </div>
+     
+     <div class="form-container"  data-aos="fade-up-left">
+         <h2>Book an Appointment</h2>
+         <p> Please provide accurate details to schedule your appointment. Our specialists are available to provide the best cardiac care.</p>
+         <form action="/save_appoinment" method="post">
+             <label for="name">Full Name</label>
+             <input type="text" id="name" name="full_name" required>
+             <label for="name">
+          Select Doctor
+             </label>
+             <select name="select_doctor" id="select_doctor" class="col-12 p-2 ">
+              <option value="">Cardiologist Consultation</option>
+              <option value="">Cardiologist Diagnostic</option>
+              <option value="">Cardiologist Pathology</option>
+            </select>
+             <label for="phone">Phone Number</label>
+             <input type="tel" id="phone" name="phone_no" required>
+             
+             <label for="date">Date</label>
+             <input type="date" id="date" name="date" required>
+             
+             <label for="time">Time</label>
+             <input type="time" id="time" name="time" required>
+             
+             <label for="message">Message</label>
+             <textarea id="message" name="message" rows="3"></textarea>
+             
+             <button type="submit">Book Now</button>
+         </form>
+     </div>
+ 
+ </section>
+ 
+<%-include("footer.ejs")%>
+<!-- 
+CREATE TABLE appointment(
+  appointment_id INT PRIMARY KEY AUTO_INCREMENT,
+  full_name TEXT,
+  select_doctor text,
+  phone_no varchar(250),
+  date DATE,
+  time time,
+  message text
+) -->

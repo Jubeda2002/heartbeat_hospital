@@ -1,0 +1,32 @@
+
+<%-include("navbar.ejs")%>
+<div class="icons">
+ <a href=""><img src="/user_assets/IMAGES/facebook.png" alt=""></a> 
+ <a href=""><img src="/user_assets/IMAGES/insta-removebg-preview.png" alt=""></a> 
+  <a href="">  <img src="/user_assets/IMAGES/whatsapp.png" alt=""></a> 
+</div>
+        
+
+    <div class="container" id="insurance-container">
+        <h1>Heart Hospital Insurance Coverage</h1>
+        <p>We accept a wide range of insurance plans to ensure you get the best possible care without financial stress.</p>
+        
+        <h2>Accepted Insurance Providers:</h2>
+        <% insurance.map((row,i)=>{ %>
+        <ul class="insurance-list">
+            <li> <%= row.insurance_title %></li>
+            <!-- <li>ABC Health Insurance</li>
+            <li>XYZ Medical Coverage</li>
+            <li>Global Life Insurance</li>
+            <li>SecureCare Health</li>
+            <li>HeartSafe Medical Plan</li> -->
+        </ul>
+        <% }) %>
+        <div class="contact">
+            <p>For any insurance-related queries, contact us at:</p>
+            <p><a href="tel:+1234567890">+1 234 567 890</a> | <a href="mailto:insurance@hearthospital.com">insurance@hearthospital.com</a></p>
+        </div>
+    </div>
+
+
+    <%-include("footer.ejs")%>

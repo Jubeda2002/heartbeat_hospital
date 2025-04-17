@@ -1,0 +1,44 @@
+
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>`
+            <th>Full Name</th>
+            <th>Select Doctor</th>
+            <th>Phone No</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Message</th>
+            <th class="fw-bold">Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        <% appointment.map(function(row,i){ %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><%= row.full_name%></td>
+            <td><%= row.select_doctor%></td>
+            <td><%= row.phone_no %></td>
+            <td><%= row.date %></td>
+            <td><%= row.time %></td>
+        
+            <td><%= row.message %></td>
+            <td class="text-warning fw-bold"><%= row.status %></td>
+            <td>
+                
+                    <a href="/admin/accepted_delete/<%= row.appointment_id %>" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        <% }); %>
+    </table>    
+    </div>
+</div>
+<%-include("footer.ejs"); %>

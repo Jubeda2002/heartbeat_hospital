@@ -1,0 +1,93 @@
+
+<%-include("navbar.ejs")%>
+<div class="icons">
+ <a href=""><img src="/user_assets/IMAGES/facebook.png" alt=""></a> 
+ <a href=""><img src="/user_assets/IMAGES/insta-removebg-preview.png" alt=""></a> 
+  <a href="">  <img src="/user_assets/IMAGES/whatsapp.png" alt=""></a> 
+</div>
+
+  <section class="serviceslider">
+    <div class="serviceslider-content">
+        <h1 class="text-light">Comprehensive Cardiac Care</h1>
+        <p class="text-light">Advanced treatments for a healthier heart.</p>
+        <div class="serviceslider-buttons">
+            <a href="appoinment.ejs" class="btn btn-primary">Book an Appointment</a>
+            <a href="tel:+919225539376" class="btn btn-secondary"> <i class="fas fa-phone"></i> +91 92255 39376</a>
+        </div>
+    </div>
+  </section>
+
+
+    <header>
+        <h1 class="text-light">Our Services</h1>
+        <p class="text-light">We provide top-notch heart care and specialized treatments</p>
+    </header>
+
+    <section class="services">
+        <%services.map((row,i)=>{ %>
+            
+        <div class="service-card">
+            <i class="<%= row.services_icon %>"></i>
+            <p><%= row.services_title %></p>
+            <p><%= row.services_description %></p>
+            <!-- <h3>General Cardiology</h3>
+            <p>Diagnosis, treatment, and prevention of heart diseases.</p> -->
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        <%})%>  
+
+        <!-- <div class="service-card">
+            <i class="fas fa-procedures"></i>
+            <h3>Cardiac Surgery</h3>
+            <p>Bypass surgery, valve replacement, and heart transplants.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-stethoscope"></i>
+            <h3>Heart Health Checkups</h3>
+            <p>Comprehensive ECG, Echo, Stress Tests, and Lipid Profile.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-ambulance"></i>
+            <h3>24/7 Emergency Care</h3>
+            <p>Immediate response for heart attacks and strokes.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-dna"></i>
+            <h3>Advanced Heart Imaging</h3>
+            <p>CT Angiography, MRI, and 3D Echo for heart scans.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-user-md"></i>
+            <h3>Cardiac Rehabilitation</h3>
+            <p>Post-surgery rehab, lifestyle modification, and exercise plans.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div> -->
+    </section>
+
+    
+        <div class="emergencies">
+            <h1>🚑 Emergency Ambulance Service</h1>
+            <p>Click the ambulance to call emergency services.</p>
+            
+            <div class="ambulance-container">
+                <div class="siren"></div>
+                    
+                <a href="tel:911">
+                    <img src="/user_assets/IMAGES/emergency.png" alt="Ambulance" class="ambulance">
+                </a>
+            </div>
+    
+            <a href="tel:911"> <h2>📞 Need Help? Call Now!</h2> </a>
+            <p>🚨 Dial <strong>108</strong> for immediate medical assistance.</p>
+        </div>
+    
+
+        <%-include("footer.ejs")%>

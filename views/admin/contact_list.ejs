@@ -1,0 +1,54 @@
+
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>`
+            <th>Quries</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile No</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th>Select City</th>
+            <th>Select Doctor</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% contact.map(function(row,i){ %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><%= row.quries%></td>
+            <td><%= row.full_name%></td>
+            <td><%= row.email %></td>
+            <td><%= row.mobile_no %></td>
+            <td><%= row.address %></td>
+            <td><%= row.date%></td>
+            <td><%= row.select_city %></td>
+            <td><%= row.select_doctor %></td>
+            <td><%= row.message %></td>
+         
+               <!-- <td>
+                <td>
+                    <a href="/admin/faq_edit/<%= row.faq_id %>" class="btn btn-primary">Edit</a>
+                    <hr>
+                    <a href="/admin/faq_delete/<%= row.faq_id %>" class="btn btn-danger" 
+                       onclick="return confirm('Are you sure you want to delete this faq?');">
+                       Delete
+                    </a>
+                </td>
+                
+            </td> -->
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+</div>
+</div>
+<%-include("footer.ejs"); %>
+

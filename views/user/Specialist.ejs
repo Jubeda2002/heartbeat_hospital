@@ -1,0 +1,125 @@
+
+<%-include("navbar.ejs")%>
+<div class="icons">
+ <a href=""><img src="/user_assets/IMAGES/facebook.png" alt=""></a> 
+ <a href=""><img src="/user_assets/IMAGES/insta-removebg-preview.png" alt=""></a> 
+  <a href="">  <img src="/user_assets/IMAGES/whatsapp.png" alt=""></a> 
+</div>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner " id="carousel-video">
+      <div class="carousel-item active">
+          
+          <video src="/user_assets/IMAGES/specilist.mp4" autoplay loop muted></video>
+          <div id="carousel-caption">
+           
+            <h1 class="text-light">Healing Hearts, Changing Lives</h1>
+            <p class="text-light">"Providing world-class cardiac care with top heart specialists dedicated to your well-being. 💖🏥"</p>
+        </div>
+      </div>
+  </div>
+</div>  
+
+
+
+
+  
+  
+
+<section class="cardsec">
+  <%Specialist.map((row,i)=>{ %>
+<div class="card" data-aos="zoom-in-up">
+
+    <!-- <img src="/IMAGES/dot1.png" class="card-img-top" alt="..."> -->
+    <img src="/admin_assets/specilist/<%= row.doctor_image %>" class="d-block w-100" alt="...">
+
+    <div class="card-body">
+      <!-- <h2 class="doctor-name">Dr.Chandrakant kadam</h2>
+        <p class="doctor-title">Cardiologist & Heart Surgeon</p>
+        <p class="doctor-info"><strong>Experience:</strong> 15+ Years</p>
+        <p class="doctor-info"><strong>Education:</strong> Harvard Medical School</p>
+        <p>Dr.Chandrakant kadam is a leading cardiologist specializing in heart surgeries, preventive care, and advanced treatments. He has successfully treated thousands of patients worldwide.</p>
+         -->
+         <h2><%= row.doctor_name %></h2>
+            <p><%= row.doctor_position %></p>
+            <p><%= row.doctor_experience %></p>
+            <p><%= row.doctor_education %></p>
+            <p><%= row.doctor_description %></p>
+        <a href="/appoinment" class="btn btn-primary col-12">Book an Appointment</a>
+        <!-- <button class="cta-button">Book a Consultation</button> -->
+      
+      </div> 
+  </div>
+  <%})%>  
+  <!-- <div class="card" data-aos="zoom-in-up">
+    <img src="/IMAGES/doc2.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="doctor-name">Dr.Chandrakant kadam</h2>
+      <p class="doctor-title">Cardiologist & Heart Surgeon</p>
+      <p class="doctor-info"><strong>Experience:</strong> 15+ Years</p>
+      <p class="doctor-info"><strong>Education:</strong> Harvard Medical School</p>
+      <p>Dr.Chandrakant kadam is a leading cardiologist specializing in heart surgeries, preventive care, and advanced treatments. He has successfully treated thousands of patients worldwide.</p>
+      <a href="appoinment.html" class="btn btn-primary">Book an Appointment</a>
+    </div>
+
+  
+  </div>
+  <div class="card" data-aos="zoom-in-up">
+    <img src="/IMAGES/dot3.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="doctor-name">Dr.Sangita kadam</h2>
+        <p class="doctor-title">Cardiologist & Heart Surgeon</p>
+        <p class="doctor-info"><strong>Experience:</strong> 15+ Years</p>
+        <p class="doctor-info"><strong>Education:</strong> Harvard Medical School</p>
+        <p>Dr.Chandrakant kadam is a leading cardiologist specializing in heart surgeries, preventive care, and advanced treatments. He has successfully treated thousands of patients worldwide.</p>
+        <a href="appoinment.html" class="btn btn-primary">Book an Appointment</a>
+      </div>
+ 
+  
+  </div>
+  <div class="card mb-4" data-aos="zoom-in-up">
+    <img src="/IMAGES/dct4.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="doctor-name">Dr.Sangita kadam</h2>
+        <p class="doctor-title">Cardiologist & Heart Surgeon</p>
+        <p class="doctor-info"><strong>Experience:</strong> 15+ Years</p>
+        <p class="doctor-info"><strong>Education:</strong> Harvard Medical School</p>
+        <p>Dr.Chandrakant kadam is a leading cardiologist specializing in heart surgeries, preventive care, and advanced treatments. He has successfully treated thousands of patients worldwide.</p>
+        <a href="appoinment.html" class="btn btn-primary">Book an Appointment</a>
+      </div>
+  
+  
+  </div>
+  <div class="card mb-4" data-aos="zoom-in-up">
+    <img src="/IMAGES/doc5.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="doctor-name">Dr.Sangita kadam</h2>
+        <p class="doctor-title">Cardiologist & Heart Surgeon</p>
+        <p class="doctor-info"><strong>Experience:</strong> 15+ Years</p>
+        <p class="doctor-info"><strong>Education:</strong> Harvard Medical School</p>
+        <p>Dr.Chandrakant kadam is a leading cardiologist specializing in heart surgeries, preventive care, and advanced treatments. He has successfully treated thousands of patients worldwide.</p>
+        <a href="appoinment.html" class="btn btn-primary">Book an Appointment</a>
+      </div>
+  </div>
+  <div class="card mb-4" data-aos="zoom-in-up">
+    <img src="/IMAGES/dot1.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="doctor-name">Dr.Chandrakant kadam</h2>
+        <p class="doctor-title">Cardiologist & Heart Surgeon</p>
+        <p class="doctor-info"><strong>Experience:</strong> 15+ Years</p>
+        <p class="doctor-info"><strong>Education:</strong> Harvard Medical School</p>
+        <p>Dr.Chandrakant kadam is a leading cardiologist specializing in heart surgeries, preventive care, and advanced treatments. He has successfully treated thousands of patients worldwide.</p>
+        <a href="appoinment.html" class="btn btn-primary">Book an Appointment</a>
+      </div>
+  
+  </div> -->
+</section >
+
+
+
+
+<%-include("footer.ejs")%>
+
+
+
+  

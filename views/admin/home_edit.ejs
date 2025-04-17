@@ -1,0 +1,63 @@
+<%- include("navbar.ejs"); %>
+
+<div class="container">
+    <h1 class="h3 mb-3"><strong>Edit</strong> Home Page Details</h1>
+    <form action="/admin/home_update/<%= home_info.home_id %>" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="home_title" class="form-label">Home Page Title</label>
+            <input type="text" class="form-control" name="home_title" value="<%= home_info.home_title %>" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="home_description" class="form-label">Short Description</label>
+            <textarea class="form-control" name="home_description"><%= home_info.home_description %></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="home_image" class="form-label">Background Image</label>
+            <input type="file" class="form-control" name="home_image">
+            <br>
+            <img src="/admin_assets/home/<%= home_info.home_image %>" style="width: 100px;">
+        </div>
+
+        <!-- <div class="mb-3">
+            <label for="working_schedule" class="form-label">Working Schedule (Mon-Fri)</label>
+            <input type="time" class="form-control" name="working_schedule" value="<%= home_info.working_schedule %>">
+        </div>
+
+        <div class="mb-3">
+            <label for="weekend_schedule" class="form-label">Weekend Schedule (Sat-Sun)</label>
+            <input type="time" class="form-control" name="weekend_schedule" value="<%= home_info.weekend_schedule %>">
+        </div>
+
+        <div class="mb-3">
+            <label for="emergency_contact" class="form-label">Emergency Contact</label>
+            <input type="number" class="form-control" name="emergency_contact" value="<%= home_info.emergency_contact %>">
+        </div> -->
+
+        <!-- <div class="mb-3">
+            <label for="award" class="form-label">Award</label>
+            <input type="text" class="form-control" name="award" value="<%= home_info.award %>">
+        </div>
+
+        <div class="mb-3">
+            <label for="award_description" class="form-label">Award Description</label>
+            <textarea class="form-control" name="award_description"><%= home_info.award_description %></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="doctor_name" class="form-label">Doctor Name</label>
+            <input type="text" class="form-control" name="doctor_name" value="<%= home_info.doctor_name %>">
+        </div>
+
+        <div class="mb-3">
+            <label for="doctor_review" class="form-label">Doctor Review</label>
+            <input type="text" class="form-control" name="doctor_review" value="<%= home_info.doctor_review %>">
+        </div> -->
+
+        <button class="btn btn-success" type="submit">Update</button>
+        <a href="/admin/home" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+<%- include("footer.ejs"); %>

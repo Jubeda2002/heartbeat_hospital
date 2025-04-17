@@ -1,0 +1,140 @@
+
+<%-include("navbar.ejs")%>
+<div class="icons">
+ <a href=""><img src="/user_assets/IMAGES/facebook.png" alt=""></a> 
+ <a href=""><img src="/user_assets/IMAGES/insta-removebg-preview.png" alt=""></a> 
+  <a href="">  <img src="/user_assets/IMAGES/whatsapp.png" alt=""></a> 
+</div>
+
+    <section class="about">
+        <div class="about-content">
+            <h1 class="text-light">Your Heart, Our Priority❤️</h1>
+            <p class="text-light">Providing Expert Cardiac Care Since 1990. Compassionate, Cutting-Edge Treatment for a Healthier You.</p>
+            <div class="about-buttons">
+                <a href="appoinment.html" class="btn btn-primary">Book an Appointment</a>
+                <a href="tel:+919225539376" class="btn btn-secondary"> <i class="fas fa-phone"></i> +91 92255 39376</a>
+            </div>
+        </div>
+    </section>
+    <% about.map((row,i)=>{ %>  
+    <section class="mission-vision">
+        <div class="mission-box" data-aos="zoom-out-up">
+            <h2><%= row.mission_title %></h2>
+            <p><%= row.mission_description %></p>
+          
+            <!-- <h2>Our Mission 🎯</h2>
+            <p>Our mission is to deliver top-quality, compassionate, and innovative cardiac care to save lives and enhance well-being.</p> -->
+        </div>
+
+        <div class="vision-box" data-aos="zoom-out-up">
+            <!-- <h2>Our Vision 🌍</h2>
+            <p>To be the leading heart hospital, setting global standards in cardiac treatment through advanced technology, research, and patient-focused care.</p> -->
+
+            <h2><%= row.vision_title %></h2>
+            <p><%= row.vision_description %></p>
+           
+        </div>
+    </section>
+    <section class="doctor">
+        <div class="doctor-section">
+        <div class="content" data-aos="fade-right"> 
+            <h2><%= row.doctor_location %></h2>
+            <h3><%= row.doctor_name %></h3>
+            <h4><%= row.doctor_position %></h4>
+            <p><%= row.doctor_description %></p>
+
+          
+            <!-- <h2>Best Cardiologist in Pune | Cardiac Clinic in Pune</h2>
+            <h3 class="doctor-name">Dr.Chandrakant kadam </h3>
+            <h4 class="clinic-name">Heartbeat multi speciality hospital In Ahmednagar</h4>
+            <p>Dr.Chandrakant kadam  is one of the <strong>Top Best Cardiologist in Pune</strong> having completed his medical practitioners from prestigious TATA Medical Center, Mumbai. He is currently practicing as an interventional cardiologist and has his MBBS, MD Medical from Pune India, MRCP from London and CCT in Cardiology from Cambridge UK. He is also connected with Hriday Mitra Cardiac Clinic of Pune inaugurated by him.</p> -->
+            <button class="read-more">Read More →</button>
+        </div>
+        <div class="image-container" data-aos="fade-left">
+            <img src="/admin_assets/about/<%= row.doctor_image %>" >
+            <!-- <img src="/IMAGES/doc2.png" alt="Dr. Rahul Sawant in Clinic"> -->
+        </div>
+      </div>
+      </section>
+    <div class="div">
+        <div class="trapezoid1" data-aos="fade-right">
+           
+          
+
+            <img src="/admin_assets/about/<%= row.hospital_image %>">
+            <!-- <img src="/IMAGES/hospital_building.png" alt=""> -->
+        </div>
+        <div class="trapezoid2"  data-aos="fade-left">
+            <h1><%= row.hospital_title %></h1>
+            <p><%= row.hospital_description %></p>
+            <!-- <h1>About Hospital</h1>
+            <p >
+                Heartbeat Multispeciality Hospital is a leading healthcare facility dedicated to providing comprehensive cardiac care and multispeciality services. With a focus on non-invasive cardiology, coronary angioplasty, diabetes management, and advanced diagnostic and pathology services, the hospital is committed to delivering exceptional care and support to its patients
+                .
+                Non-Invasive Cardiology: The hospital specializes in cutting-edge non-invasive cardiology procedures, ensuring accurate diagnosis and effective treatment without the need for surgical intervention.</p> -->
+        </div>
+    </div>
+    <section class="history-section">
+        <h2>Our Hospital's Journey 🏥</h2>
+        <div class="timeline">
+            <% history.map(function(row,i){ %>
+            <div class="timeline-box left" data-aos="fade-left">
+                
+                <p><%= row.histroy_title_left %></p>
+                <p><%= row.histroy_description_left %></p>
+               
+                <!-- <h3>1990 - Hospital Founded</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iste distinctio cumque</p> -->
+             
+            </div>
+            <div class="timeline-box right" data-aos="fade-right">
+                <p><%= row.histroy_title_right %></p>
+                <p><%= row.histroy_description_right %></p>
+                <!-- <h3>2000 - Expansion of Facilities</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iste distinctio cumque</p> -->
+            </div> 
+            <!-- <div class="timeline-box left" data-aos="fade-left">
+                <h3>2010 - International Recognition</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iste distinctio cumque</p>
+            </div>
+            <div class="timeline-box right" data-aos="fade-right">
+                <h3>2020 - Cardiac Sergory</h3>
+                <p> et labore explicabo nesciunt sunt facilis laudantium! Voluptas harum quae doloremque velit tempora eum</p>
+            </div> --> 
+            <% }); %>
+        </div>
+       
+    </section>
+    <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        <% faq.map(function(row,i){ %>
+        <div class="faq-item">
+            <div class="faq-question"><%= row.faq_question %></div>
+                <div class="faq-answer"><%= row.faq_Answer %></div>
+            <!-- <div class="faq-question">What services does your heart hospital offer?</div>
+            <div class="faq-answer">We offer preventive care, diagnostic testing, interventional procedures, heart surgery, and rehabilitation programs.</div> -->
+        </div>
+        <% }); %>
+        <!-- <div class="faq-item">
+            <div class="faq-question">Do I need a referral to see a cardiologist?</div>
+            <div class="faq-answer">It depends on your insurance provider and medical condition. Some patients can schedule directly, while others may need a referral.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What should I do in case of a heart emergency?</div>
+            <div class="faq-answer">Call 911 immediately or visit the nearest emergency room. Do not drive yourself if experiencing severe chest pain, shortness of breath, or dizziness.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How can I prevent heart disease?</div>
+            <div class="faq-answer">Maintain a healthy diet, exercise regularly, manage stress, avoid smoking, and have regular heart check-ups.</div>
+        </div> -->
+</div>
+  <% }); %>
+    <script>
+        // Toggle active class on FAQ items when question is clicked
+        document.querySelectorAll('.faq-question').forEach(question => {
+          question.addEventListener('click', () => {
+            question.parentElement.classList.toggle('active');
+          });
+        });
+      </script>
+<%-include("footer.ejs")%>

@@ -1,0 +1,43 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="/admin/services_update/<%=services.services_id%>" method="post" class="services_form" enctype="multipart/form-data">
+            <!-- <h1 class="h3 mb-3"><strong>Add</strong> Doctors Details</h1> -->
+            <!-- <h5>Services Icon</h5>
+            <input type="file" name="services_icon" class="form-control"> -->
+            <h5>Services Icon</h5>
+
+            <select name="services_icon" class="form-control" >
+                <% let icons = ["bi-heart-pulse", "bi-hospital", "bi-clipboard2-pulse", "bi-gear", "bi-lightbulb"]; %>
+                <% icons.forEach(icon => { %>
+                    <option value="<%= icon %>"><%= icon %></option>
+                <% }) %>
+            </select>
+            
+             <br>       
+            <h5>Services Title</h5>
+                 <input type="text" name="services_title" class="form-control" placeholder="Services Title" value="<%=services.services_title%>">
+                 <br>
+                    <h5>Services Description</h5>
+                    <textarea name="services_description" class="form-control" placeholder="Services Description">
+
+                        <%=services.services_id%>
+                    </textarea>
+                    <br>
+                    <button class="btn btn-lg btn-primary" type="submit">Update Services</button>
+            </form>
+            </div>
+        </div>
+        <br>
+        
+   
+
+     
+            <%-include("footer.ejs"); %>
+     
+            <!-- CREATE TABLE services (
+                services_id INT AUTO_INCREMENT PRIMARY KEY,
+                services_icon VARCHAR(50),  -- Store Bootstrap Icon class name
+                services_title TEXT,
+                services_description TEXT
+            ); -->

@@ -1,0 +1,310 @@
+
+<%-include("navbar.ejs")%>
+<div class="icons">
+ <a href=""><img src="/user_assets/IMAGES/facebook.png" alt=""></a> 
+ <a href=""><img src="/user_assets/IMAGES/insta-removebg-preview.png" alt=""></a> 
+  <a href="">  <img src="/user_assets/IMAGES/whatsapp.png" alt=""></a> 
+</div>
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+ 
+  
+<div class="carousel-inner">
+
+    <% sliderimage.map((row,i)=>{ %>
+        <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+            <img src="/admin_assets/home/<%= row.home_image %>" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <div class="slide-text">
+                    <h2 class="text-light">Advanced Heart Care ❤️</h2>
+                    <p class="text-light">We provide world-class treatment with expert cardiologists.</p>
+                    <a href="/appoinment" class="cta-button">Book an Appointment</a>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+</div>
+</div>
+
+<section class="Appointment">
+  <form action="/save_appoinment" method="post">
+  <div class="mb-3">
+    <h1>Book an Appointment</h1>
+    </div>
+   
+  <div class="mb-3">
+  <input type="text" name="full_name" class="form-control" id="exampleInputName" aria-describedby="Help" placeholder="Name" style="margin-top: 30px;">
+  </div>
+ 
+    <div class="mb-3">
+      <input type="number" name="phone_no" class="form-control" id="exampleInputNumber" aria-describedby="Help" placeholder="Contact">
+      </div>
+  <div class="mb-3">
+  <input type="date" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="Help" >
+  </div>
+  <div class="mb-3">
+  <select name="select_doctor" id="">
+    <option value="">Cardiologist Consultation</option>
+    <option value="">Cardiologist Diagnostic</option>
+    <option value="">Cardiologist Pathology</option>
+  </select>
+    </div>
+  <button type="submit" class="btn">Book Now</button>
+</form>
+
+<div class="heart" data-aos="zoom-in"><img src="/user_assets/IMAGES/view.png" alt=""></div>
+<div class="cart text-white mb-3" id="heart-card" >
+  <div class="card-header bg-warning p-2 " > Health Tips for Heart </div>
+  <div class="card-body" data-aos="zoom-in">
+ 
+      <h6>🥗 Maintain a healthy diet with fruits, vegetables, and whole grains.</h6>
+      <h6>🏃‍♂️ Engage in at least 30 minutes of daily physical activity.</h6>
+      <h6>🧘 Practice stress management techniques like yoga or deep breathing.</h6>
+      <h6>🚭 Quit smoking and reduce alcohol consumption.</h6>
+      <h6>🩺 Regularly check blood pressure, cholesterol, and sugar levels.</h6>
+      <h6>💧 Stay well-hydrated and get sufficient sleep for heart health.</h6>
+    
+ </div>
+
+</section>
+
+<section class="doctor">
+  <div class="doctor-section">
+  <div class="content " data-aos="fade-right"> 
+      <h2 data-aos="zoom-out">Best Cardiologist in Pune | Cardiac Clinic in Pune</h2>
+      <h3 class="doctor-name" data-aos="zoom-out">Dr.Chandrakant kadam </h3>
+      <h4 class="clinic-name" data-aos="zoom-out">Heartbeat multi speciality hospital In Ahmednagar</h4>
+      <p data-aos="zoom-out">Dr.Chandrakant kadam  is one of the <strong>Top Best Cardiologist in Pune</strong> having completed his medical practitioners from prestigious TATA Medical Center, Mumbai. He is currently practicing as an interventional cardiologist and has his MBBS, MD Medical from Pune India, MRCP from London and CCT in Cardiology from Cambridge UK. He is also connected with Hriday Mitra Cardiac Clinic of Pune inaugurated by him.</p>
+     <a href="/Specialist" data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom"> <button class="read-more">Read More →</button></a>
+  </div>
+  <div class="image-container" data-aos="fade-left">
+      <img src="/user_assets/IMAGES/doc2.png" alt="Dr. Rahul Sawant in Clinic">
+  </div>
+</div>
+</section>
+ 
+
+<div class="testimonial-section">
+  <h2>Best Review For Our Patients</h2>
+  <div class="testimonial-container">
+    <div class="testimonial-slider">
+      <% review.map((row,i)=>{ %>
+      <div class="testimonial">
+        <!-- <img src="/user_assets/IMAGES/patient1.png" alt="Patient 1"> -->
+        <img src="/admin_assets/home/<%= row.patient_image %>">
+        <h3><%= row.patient_name %></h3>
+        <p><%= row.date %></p>
+        <p class="stars">★★★★★</p>
+        <!-- <p><%= row.rating %></p> -->
+        <p><%= row.description %></p>
+        <!-- <h3>Suresh Kothule </h3>
+        <p class="date">  11 Jan 2024</p>
+        <p class="stars">★★★★★</p>
+        <p class="review">``Great customer service at Heartbeat Multispeciality Hospital! The staff were very friendly and helpful. I felt well taken care of during my visit. Excellent experience overall!``</p> -->
+      </div>
+      <% }); %>
+
+    
+
+      <!-- <div class="testimonial">
+        <img src="/user_assets/IMAGES/patient2.png" alt="Patient 2">
+        <h3>Ganesh Garule</h3>
+        <p class="date">10 Jan 2024
+        </p>
+        <p class="stars">★★★★★</p>
+        <p class="review">Hands-down the most effective and efficient doctor. Friendly, helpful staff as well. Hospital Cleaning And Maintenance Also Perfect.
+          My Rating To This Hospital Is 5 Out Of 5. Thank You</p>
+      </div>
+      <div class="testimonial">
+        <img src="/user_assets/IMAGES/patient3.png" alt="Patient 3">
+        <h3>Kishor</h3>
+        <p class="date">08 Feb 2023</p>
+        <p class="stars">★★★★★</p>
+        <p class="review">I recently visited Heartbeat Multispeciality Hospital and was thoroughly impressed with the great service I received. The staff was extremely friendly and helpful, and the doctors provided fast service without compromising on quality.</p>
+      </div> -->
+     
+      <!-- <div class="testimonial">
+        <img src="/user_assets/IMAGES/patient4.png" alt="Patient 1">
+        <h3>Amit</h3>
+        <p class="date">11 Feb 2023</p>
+        <p class="stars">★★★★★</p>
+        <p class="review">Heartbeat multi speciality hospital is one of the best multi specialty hospital in savedi and Ahmednagar city area, doctor is very cooperative and staff is very active, I will recommend thus hospital to all, this is one of the best hospital in savedi.</p>
+      </div>
+      <div class="testimonial">
+        <img src="/user_assets/IMAGES/patient5.png" alt="Patient 2">
+        <h3>Avinash sanap</h3>
+        <p class="date">2024-11-10</p>
+        <p class="stars">★★★★★</p>
+        <p class="review">Doctor Sawant gives good time in explaining the condition and advising...</p>
+      </div>
+      <div class="testimonial">
+        <img src="/user_assets/IMAGES/patient1.png" alt="Patient 3">
+        <h3>Raju</h3>
+        <p class="date">20 Sept 2019</p>
+        <p class="stars">★★★★★</p>
+        <p class="review">Dr.Chandrakant kadam is best cardiologist and staff is good</p>
+      </div> -->
+    </div>
+  </div>
+</div>
+<section class="facilities-section">
+  <h2>Our Facilities</h2>
+  <div class="facility-list">
+      <% facility.map((row,i)=>{ %>
+    <div class="facility-item">
+      <img src="/admin_assets/home/<%= row.facility_image %>" >
+      <!-- <img src="/user_assets/IMAGES/heartgraphic.png" alt="Cardiac OT" />
+      <h3>CARDIAC OT</h3> -->
+      <h3><%= row.facility_title %></h3>
+    </div>
+    <% }) %>
+    <!-- <div class="facility-item">
+      <img src="/user_assets/IMAGES/catlab.png" alt="Cathlab" />
+      <h3>CATHLAB</h3>
+    </div>
+    <div class="facility-item">
+      <img src="/user_assets/IMAGES/ambulance.png" alt="Ambulance 24x7" />
+      <h3>AMBULANCE 24X7</h3>
+    </div>
+    <div class="facility-item">
+      <img src="/user_assets/IMAGES/3decho.png" alt="3D Echo & Doppler" />
+      <h3>3D ECHO & DOPPLER</h3>
+    </div>
+    <div class="facility-item">
+      <img src="/user_assets/IMAGES/iccunit.png" alt="ICCU Unit" />
+      <h3>ICCU UNIT</h3>
+    </div> -->
+  </div>
+  <a href="#" class="know-more-btn">Know More</a>
+</section>
+
+<section class="Services">
+  <h1>Our Centres of Excellence</h1>
+ <div class="flip-card">
+<div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="/user_assets/IMAGES/consoultation.png" alt="">
+      </div>
+    <div class="flip-card-back">
+    <h2>  Cardiologist Consultation </h2>
+  <h6>✔ Diagnosis of heart disease, chest pain, palpitations</h6>
+    <h6> ✔ Treatment plans for high BP, cholesterol, heart failure</h6>
+    <h6> ✔ Pre/post-surgery advice (e.g., bypass, angioplasty)</h6>
+    </div>
+</div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="/user_assets/IMAGES/pathology.png" alt="">
+      </div>
+      <div class="flip-card-back">
+        <h2>  Cardiologist Pathology </h2>
+      <h6>✔ Blood Tests (Cholesterol, CBC, Sugar, Troponin for heart attack)</h6>
+        <h6> ✔ Lipid Profile (To check heart disease risk)</h6>
+        <h6> ✔ Cardiac Biomarkers (For heart damage detection)</h6>
+        </div>
+  </div>
+  </div>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="/user_assets/IMAGES/diag.png" alt="">
+        </div>
+        <div class="flip-card-back">
+          <h2>  Cardiologist Diagnostics  </h2>
+        <h6>✔ ECG (Electrocardiogram) – Checks heart rhythm</h6>
+          <h6> ✔ Echocardiogram (Heart Ultrasound) – Examines heart structure</h6>
+          <h6>✔ Cardiac MRI & CT Scan – Provides detailed heart imaging</h6>
+          </div>
+    </div>
+    </div>
+</section>
+
+ 
+  
+
+<section class="heart-health">
+    <div class="why_choose_us">
+      <h2>Why Heart Health Matters</h2>
+      <p>Heart disease is the leading cause of health complications worldwide. A healthy heart means a healthier, longer life. Early detection and care can save lives.</p>
+      
+
+      <div class="heart-benefits">
+        <% heart.map(function(row,i){ %>
+        <div class="benefit" data-aos="fade-right">
+          <!-- <img src="/user_assets/IMAGES/heart.jpg" alt="Prevent Heart Disease"> -->
+          <img src="/admin_assets/home/<%= row.heart_image %>" >
+          <h3><%= row.heart_title %></h3>
+          <p><%= row.heart_description %></p>
+          <!-- <h3>Prevent Heart Disease</h3>
+          <p>Learn how to maintain a heart-healthy lifestyle and reduce risks.</p> -->
+        </div>
+        <% }); %>
+<!--   
+        <div class="benefit">
+          <img src="/user_assets/IMAGES/heart-shape-stethoscope-medical-subjects.jpg" alt="Expert Cardiac Care">
+          <h3>Expert Cardiac Care</h3>
+          <p>Our team of specialists is dedicated to advanced heart treatments.</p>
+        </div>
+  
+        <div class="benefit" data-aos="fade-left">
+          <img src="/user_assets/IMAGES/consoultation.png" alt="Emergency Support">
+          <h3>24/7 Emergency Support</h3>
+          <p>Immediate assistance for heart-related emergencies at any time.</p>
+        </div>
+      </div> -->
+  
+  
+    </div>
+    <a href="" class="cta-button">Book a Consultation</a>
+  </section> 
+
+
+
+  
+  
+
+<div class="container">
+  <h1>Hospital Capabilities Growth Over the Years</h1>
+  <div class="stats">
+      <div class="stat-box">
+          <div class="stat-number" id="patients-count">0</div>
+          <p>Patients Treated</p>
+      </div>
+      <div class="stat-box">
+          <div class="stat-number" id="departments-count">0</div>
+          <p>Specialized Departments</p>
+      </div>
+      <div class="stat-box">
+          <div class="stat-number" id="surgeries-count">0</div>
+          <p>Successful Surgeries</p>
+      </div>
+  </div></div>
+
+  <script>
+    function animateCounter(id, start, end, duration) {
+            let obj = document.getElementById(id);
+            let range = end - start;
+            let current = start;
+            let increment = range / (duration / 10);
+            
+            let timer = setInterval(() => {
+                current += increment;
+                obj.textContent = Math.floor(current);
+                if (current >= end) {
+                    obj.textContent = end;
+                    clearInterval(timer);
+                }
+            }, 10);
+        }
+
+        animateCounter("patients-count", 0, 50000, 2000);
+        animateCounter("departments-count", 0, 15, 2000);
+        animateCounter("surgeries-count", 0, 12000, 2000);
+
+    </script>
+
+<%-include("footer.ejs")%>
+ 

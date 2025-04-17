@@ -1,0 +1,32 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="/admin/blogs_details/<%=blogs.blogs_id%>" method="post" class="blogs_form" enctype="multipart/form-data">
+            <!-- <h1 class="h3 mb-3"><strong>Add</strong> Doctors Details</h1> -->
+            <h5>Blogs Image</h5>
+            <input type="file" name="blogs_image" value="<%=blogs.blogs_image%>" class="form-control">
+             <br>       
+            <h5>Blogs Title</h5>
+                 <input type="text" name="blogs_title" value="<%=blogs.blogs_title%>" class="form-control" placeholder="Blogs Title">
+                 <br>
+                    <h5>Blogs Description</h5>
+                    <textarea name="blogs_description" class="form-control" placeholder="Blogs Description">
+                        <%=blogs.blogs_description%>
+                    </textarea>
+                    <br>
+                    <button class="btn btn-lg btn-primary" type="submit">Update Blogs</button>
+            </form>
+            </div>
+        </div>
+        <br>
+       
+  
+     
+            <%-include("footer.ejs"); %>
+     
+        <!-- CREATE TABLE blogs (
+            blogs_id INT AUTO_INCREMENT PRIMARY KEY,
+             blogs_image TEXT,
+            blogs_title text,
+            blogs_description TEXT
+        ) -->

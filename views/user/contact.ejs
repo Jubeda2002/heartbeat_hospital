@@ -1,0 +1,138 @@
+<%-include("navbar.ejs")%>
+
+<div class="icons">
+ <a href=""><img src="/user_assets/IMAGES/facebook.png" alt=""></a> 
+ <a href=""><img src="/user_assets/IMAGES/insta-removebg-preview.png" alt=""></a> 
+  <a href="">  <img src="/user_assets/IMAGES/whatsapp.png" alt=""></a> 
+</div>
+
+    <section class="getintouch">
+        <h1>Contact US</h1>
+        <p>At Heartbeat Hospital, we are committed to making quality heart care accessible and convenient for you. Our mission is to provide top-tier cardiac care, continuous support, and reliable medical services.
+          If you need to consult a specialist from our cardiology department, require information about our heart care services, or have any questions, please fill out the form below. Our team will get back to you promptly to assist with your needs.
+      <br>
+      Your heart health is our priority!
+        </p>
+        <form action="/save_contact" method="post" class="row g-3 needs-validation mt-5"  >
+          <div class="col-12">
+            <select id="queryType" class="form-select" name="quries">
+              <option value="option1">Type of Query:</option>
+              <option value="option1">Enquiry</option>
+              <option value="option2">Complaint</option>
+              <option value="option3">Feedback</option>
+            </select>
+        </div>
+       <div class="col-md-6">
+           
+            <input type="text" name="full_name" class="form-control" id="validationCustom01" value="" placeholder="Full Name*" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" name="email"
+            class="form-control" id="validationCustom02" value=""  placeholder="Email*" required>
+           
+          </div>
+          <br>
+          <div class="col-md-6">
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">+91</span>
+              <input name="mobile_no" type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" placeholder="Mobile Number" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input name="address" type="text" class="form-control" id="validationCustom03" placeholder="Address" required>
+          </div>
+          <div class="col-md-6">
+            <input name="date" type="date" class="form-control" id="validationCustom05" placeholder="Date">
+          
+        
+          </div>
+          <div class="col-md-6">
+            <select name="select_city" class="form-select" id="validationCustom04" required>
+              <option selected disabled value="">--Select City--</option>
+              <option value="ahmednagar">Ahmednagar</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="pune">Pune</option>
+              <option value="nagpur">Nagpur</option>
+              <option value="nashik">Nashik</option>
+              <option value="aurangabad">Aurangabad</option>
+              <option value="solapur">Solapur</option>
+              <option value="amravati">Amravati</option>
+            </select>
+        
+          </div>
+          <div class="col-md-12">
+            <select name="select_doctor" class="form-select" id="validationCustom04" required>
+              <option selected disabled value="">--Select Doctor--</option>
+              <option value="dr-patil">Dr. Suresh Patil</option>
+              <option value="dr-kulkarni">Dr. Anjali Kulkarni</option>
+              <option value="dr-desai">Dr. Vinod Desai</option>
+            </select>
+        
+          </div>
+          <!-- <div class="col-md-6">
+            <select class="form-select" id="validationCustom04" required>
+              <option selected disabled value="">--Select Doctor--</option>
+              <option>...</option>
+            </select>
+           
+          </div> -->
+          <div class="col-12">
+          <textarea name="message" class="form-control" id="validationTextarea" placeholder="Message" required></textarea>
+        </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+        
+      </form>
+            <div class="contact_img">
+              <img src="/user_assets/IMAGES/contactus.png" alt="">
+          </div>
+        
+            <div class="Contact_text">
+             
+              <p>Heartbeat Multispeciality Hospital is a leading healthcare facility dedicated to providing comprehensive cardiac 
+                care and multispeciality services. 
+              </p>
+              <span><a href="https://www.google.com/maps/search/?api=1&query=19.1211334,74.7280789"  target="_blank" class="address-link">
+                <% contact.map((row,i)=>{ %>
+                      <i class="fas fa-map-marker-alt"></i>
+                       <!-- Dhumal Tower, Nagar Manmad Road, Savedi, Ahmednagar - 414003 (Near Hotel Panchsheel) -->
+                <%-row.contact_address%>
+              </a></span>
+              <span><a href="mailto:info@hospital.com"><i class="fas fa-envelope"></i>
+                 <!-- info@hospital.com -->
+                 <%-row.contact_email%>
+                </a></span>
+              <span><a href="tel:+1234567890"><i class="fas fa-phone"></i> 
+                <!-- +1 234 567 890 -->
+                <%-row.contact_number%>
+             </a></span>
+
+             <%})%>    
+          </div>
+        
+        </section>    
+       <div class="contactmap">
+          <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0547920674947!2d74.7279844!3d19.1212375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdcba6357983113%3A0x3c61e0120fb21304!2sSavedi%2C%20Ahilya%20Nagar%2C%20Maharashtra%20414003!5e0!3m2!1sen!2sin!4v1707910800000" 
+          width="100%" 
+          height="450" 
+         loading="lazy"
+         style="float: left;"
+        >
+        </iframe>
+      </div> 
+  
+
+      <%-include("footer.ejs")%>

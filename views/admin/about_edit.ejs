@@ -1,0 +1,47 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="/admin/about_update/<%=about.about_id%>" method="post"  enctype="multipart/form-data">
+            <!-- <h1 class="h3 mb-3"><strong>Add</strong> Doctors Details</h1> -->
+            <h5>Mission Title</h5>
+            <input type="text" name="mission_title" class="form-control" value="<%=about.mission_title %>">
+            <br>   
+            <h5>Mission Description</h5>
+            <textarea name="mission_description" class="form-control" value="<%=about.mission_description %>"></textarea>
+            <br>
+            <h5>Vision Title</h5>
+            <input type="text" name="vision_title" class="form-control" value="<%=about.vision_title %>">
+            <br>   
+            <h5>Vision Description</h5>
+            <textarea name="vision_description" class="form-control" value="<%=about.vision_description %>"></textarea>
+            <br>
+            <h5>Doctor Location</h5>
+            <input type="text" name="doctor_location" class="form-control" value="<%=about.doctor_location %>">
+            <br>
+            <h5>Doctor Name</h5>
+               <input type="text" name="doctor_name" class="form-control" value="<%=about.doctor_name %>">
+               <br>
+               <h5>Doctor Position</h5>
+                    <input type="text" name="doctor_position" class="form-control" value="<%=about.doctor_position %>">
+                    <br>
+               <h5>Doctor Description</h5>
+               <input type="text" name="doctor_description" class="form-control" value="<%=about.doctor_description %>">
+               <br>
+               <h5>Doctor Image</h5>
+               <input type="file" name="doctor_image" class="form-control" value="<%=about.doctor_image %>">
+                <br> 
+                <h5>Hospital Image</h5>
+               <input type="file" name="hospital_image" class="form-control"value="<%=about.hospital_image %>">
+                <br> 
+
+                <h5>Hospital Title</h5>
+                <input type="text" name="hospital_title" class="form-control" value="<%=about.hospital_title %>">
+                <br>
+           <h5>Hospital Description</h5>
+           <input type="text" name="hospital_description" class="form-control" value="<%=about.hospital_description %>">
+           <br>
+         
+                    <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+            </form>
+            </div>
+        </div>

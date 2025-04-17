@@ -1,0 +1,75 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="doctor_details" method="post" class="doctor_form" enctype="multipart/form-data">
+            <!-- <h1 class="h3 mb-3"><strong>Add</strong> Doctors Details</h1> -->
+            <h5>Doctor Image</h5>
+            <input type="file" name="doctor_image" class="form-control">
+             <br>       
+            <h5>Doctor Name </h5>
+                 <input type="text" name="doctor_name" class="form-control" placeholder="Doctor Name">
+                 <br>
+                 <h5>Doctor Position</h5>
+                    <input type="text" name="doctor_position" class="form-control" placeholder="Doctor Position">
+                    <br>
+                    <h5>Doctor Experience</h5>
+                    <input type="text" name="doctor_experience" class="form-control" placeholder="Doctor Experience">
+                    <br>
+                    <h5>Doctor Education</h5>
+                    <input type="text" name="doctor_education" class="form-control" placeholder="Doctor Education">
+                    <br>
+                    <h5>Doctor Description</h5>
+                    <textarea name="doctor_description" class="form-control" placeholder="Doctor Description"></textarea>
+                    <br>
+                    <button class="btn btn-lg btn-primary" type="submit">Add Doctor</button>
+            </form>
+            </div>
+        </div>
+        <br>
+       
+      <table>
+        <tr>
+            <th>Doctor ID</th>
+            <th>Doctor Image</th>
+            <th>Doctor Name</th>
+            <th>Doctor Position</th>
+            <th>Doctor Experience</th>
+            <th>Doctor Education</th>
+            <th>Doctor Description</th>
+            <th>Action</th>
+        </tr>
+        <% doctor_info.map(function(row,i){ %>
+        <tr>
+            <td><%= i+1%></td>
+            <td><img src="/admin_assets/specilist/<%= row.doctor_image %>" style="width: 100px; height: 100px;"></td>
+            <td><%= row.doctor_name %></td>
+            <td><%= row.doctor_position %></td>
+            <td><%= row.doctor_experience %></td>
+            <td><%= row.doctor_education %></td>
+            <td><%= row.doctor_description %></td>
+            <td>
+                <td>
+                    <a href="/admin/Specialist_edit/<%= row.doctor_id%>" class="btn btn-primary">Edit</a>
+                    <a href="/admin/Specialist_delete/<%= row.doctor_id%>" class="btn btn-danger" 
+                       onclick="return confirm('Are you sure you want to delete this record?');">
+                       Delete
+                    </a>
+                </td>
+                
+            </td>
+        </tr>
+        <% }); %>
+      </table>
+
+     
+            <%-include("footer.ejs"); %>
+     
+        <!-- CREATE TABLE doctor_team (
+            doctor_id INT AUTO_INCREMENT PRIMARY KEY,
+             doctor_image TEXT,
+            doctor_name VARCHAR(255),
+            doctor_position text,
+            doctor_experience VARCHAR(255),
+            doctor_education text,
+            doctor_description TEXT
+        ) -->

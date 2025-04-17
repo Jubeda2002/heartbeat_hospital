@@ -1,0 +1,15 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+    <form action="/admin/faq_update/<%=faq.faq_id%>" method="post">
+        <!-- <input type="hidden" name="faq_id" value=""> -->
+        <h5>Faq Question</h5>
+        <input type="text" name="faq_question" class="form-control" value="<%=faq.faq_question  %>">
+        <br>
+        <h5>Faq Answer</h5>
+        <input type="text" name="faq_Answer" class="form-control" value="<%=faq.faq_Answer  %>">
+        <br>
+                   <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+    </form>   
+    </div>
+    </div>

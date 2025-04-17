@@ -1,0 +1,21 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="/admin/contact_update/<%=contact_info.contact_id%>" method="post"  enctype="multipart/form-data">
+            <h5>
+                Address
+           </h5>
+           <input type="text" class="form-control" name="contact_address" value="<%=contact_info.contact_address%>">
+           <br>
+           <h5>
+            Email
+            </h5>
+             <input type="text" class="form-control" name="contact_email" value="<%=contact_info.contact_email%>">
+             <br>
+            <h5>
+                Contact Number
+            </h5>
+            <input type="number" class="form-control" name="contact_number" value="<%=contact_info.contact_number %>">
+            <br>
+           <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+    </form>

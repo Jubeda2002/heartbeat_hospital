@@ -1,0 +1,67 @@
+
+<%-include("navbar.ejs")%>
+<div class="icons">
+ <a href=""><img src="/user_assets/IMAGES/facebook.png" alt=""></a> 
+ <a href=""><img src="/user_assets/IMAGES/insta-removebg-preview.png" alt=""></a> 
+  <a href="">  <img src="/user_assets/IMAGES/whatsapp.png" alt=""></a> 
+</div>
+
+
+    <section class="privacy-policy">
+        <div class="container">
+            <h2 class="text-center">Privacy Policy</h2>
+            <p class="text-center">Effective Date: <strong>February 2025</strong></p>
+            
+            <div class="policy-content">
+                <%policy.map((row,i)=>{ %>
+                <div class="policy-item fade-in"  data-aos="zoom-in-down">
+
+                    <h4><%= row.policy_title %></h4>
+                    <p><%= row.policy_description %></p>
+                    <!-- <h4>1. Information We Collect</h4>
+                    <p>We collect personal details such as your name, contact information, medical history, and billing details to provide better healthcare services.</p> -->
+                </div>
+                     
+    <% }) %>
+<!-- 
+                <div class="policy-item fade-in"  data-aos="zoom-in-down">
+                    <h4>2. How We Use Your Information</h4>
+                    <p>Your data is used for medical treatment, appointment scheduling, billing, and ensuring compliance with healthcare regulations.</p>
+                </div>
+
+                <div class="policy-item fade-in"  data-aos="zoom-in-down">
+                    <h4>3. Data Security</h4>
+                    <p>We use encryption, secure servers, and access controls to protect your sensitive health information.</p>
+                </div>
+
+                <div class="policy-item fade-in"  data-aos="zoom-in-down">
+                    <h4>4. Your Rights</h4>
+                    <p>You have the right to access, update, or request deletion of your data. Contact us for more details.</p>
+                </div>
+
+                <div class="policy-item fade-in"  data-aos="zoom-in-down">
+                    <h4>5. Contact Us</h4>
+                    <p>For privacy concerns, reach us at <a href="mailto:info@hearthospital.com">info@hearthospital.com</a> or call +123 456 7890.</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Fade-in Animation for Policy Sections
+        document.addEventListener("DOMContentLoaded", function() {
+            const items = document.querySelectorAll(".policy-item");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            });
+            items.forEach(item => observer.observe(item));
+        });
+    </script>
+
+
+
+<%-include("footer.ejs")%>

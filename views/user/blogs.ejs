@@ -1,0 +1,84 @@
+
+<%-include("navbar.ejs")%>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner " id="carousel-video">
+        <div class="carousel-item active">
+            
+            <video src="/user_assets/IMAGES/blogs.mp4" autoplay loop muted></video>
+            <div id="carousel-caption">
+                <h1 class="text-light">💖 Your Heart, Our Priority</h1>
+                <p class="text-light">Providing world-class cardiac care with state-of-the-art technology.</p>
+            </div>
+        </div>
+    </div>
+</div>  
+
+
+
+
+<section class="heart-blogs">
+    <div class="blogs">
+      <h2>ARTICLES & TIPS</h2>
+      <p>Latest News & Blogs</p>
+    
+       
+           
+  
+     
+      <div class="heart-benefits">
+      
+        <% blogs.map((row,i)=>{ %> 
+        <div class="blogs-benefit" data-aos="fade-up-right">
+          <!-- <img src="/IMAGES/pacemaker.png" alt="Prevent Heart Disease"> -->
+          <td><img src="/admin_assets/blogs/<%= row.blogs_image %>" ></td>
+          <!-- <h3>How a Pacemaker Can Improve Your Heart Health</h3> -->
+          <p><%= row.blogs_title %></p>
+          <!-- <p>For individuals suffering from heart rhythm disorders, such as bradycardia (slow heartbeat) or irregular rhythms, 
+            a pacemaker can be a game-changing solution.</p> -->
+            <p><%= row.blogs_description %></p>
+            <button class="read-more">Read More →</button>
+          
+          </div>
+          <%})%> 
+        <!-- <div class="blogs-benefit" data-aos="fade-up">
+          <img src="/IMAGES/heart-shape-stethoscope-medical-subjects.jpg" alt="Expert Cardiac Care">
+          <h3>The Role of a Heart Doctor in Your Health</h3>
+          <p>When it comes to maintaining good health, the heart plays a vital role. This incredible organ works tirelessly, pumping blood and oxygen throughout your body.</p>
+          <button class="read-more">Read More →</button>
+        </div>
+  
+        <div class="blogs-benefit" data-aos="fade-up-left"> -->
+          <!-- <img src="/IMAGES/heartmedication.png" alt="Emergency Support">
+          <h3>Understanding Heart Medication: What’s Important?</h3>
+          <p>Heart health is critical to overall well-being, and medications play a vital role in managing heart conditions.</p>
+          <button class="read-more">Read More →</button>
+        </div>
+
+        <div class="blogs-benefit" data-aos="fade-up-right">
+            <img src="/IMAGES/Angioplasty.jpg" alt="Prevent Heart Disease">
+            <h3>What Happens During Angioplasty? A Simple Guide</h3>
+            <p>Angioplasty is a minimally invasive procedure designed to restore blood flow in arteries that have become narrowed or blocked due to plaque buildup, a condition often associated with heart disease.</p>
+              <button class="read-more">Read More →</button>
+            </div>
+    
+          <div class="blogs-benefit" data-aos="fade-up">
+            <img src="/IMAGES/best-cardiologist.jpg" alt="Expert Cardiac Care">
+            <h3>Cardiologists and You: Tips for Maintaining a Healthy Heart</h3>
+            <p>Your heart is the engine that keeps your body functioning efficiently, and good heart health is critical for general wellness..</p>
+            <button class="read-more">Read More →</button>
+          </div>
+    
+          <div class="blogs-benefit" data-aos="fade-up-left">
+            <img src="/IMAGES/heart-clinic.jpg" alt="Emergency Support">
+            <h3>How to Deal with Your Heart Wellbeing?</h3>
+            <p>Heart health is crucial to maintaining overall wellness. The heart, being one of the most vital organs in the body, pumps blood, supplies oxygen, and sustains life itself</p>
+            <button class="read-more">Read More →</button>
+          </div> -->
+      </div>
+  
+    </div>
+  </section>
+
+
+
+  <%-include("footer.ejs")%>

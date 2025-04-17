@@ -1,0 +1,29 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="/admin/gallary_update/<%=gallary.gallery_id%>" method="post" class="gallary" enctype="multipart/form-data">
+            <!-- <h1 class="h3 mb-3"><strong>Add</strong> Doctors Details</h1> -->
+            <h5>Gallery Image</h5>
+            <input type="file" name="gallery_image" class="form-control" value="<%=gallary.gallery_image%>">
+             <br>       
+             <h5>Gallery Description</h5>
+            <textarea name="gallery_description" class="form-control" placeholder="Gallery Description">
+
+                <%=gallary.gallery_description%>
+            </textarea>
+            <br>
+             <button class="btn btn-lg btn-primary" type="submit">Update Gallery</button>
+            </form>
+            </div>
+        </div>
+        <br>
+       
+   
+     
+            <%-include("footer.ejs"); %>
+     
+        <!-- CREATE TABLE gallery_image(
+            gallery_id INT AUTO_INCREMENT PRIMARY KEY,
+             gallery_image TEXT,
+            gallery_description TEXT
+        ) -->

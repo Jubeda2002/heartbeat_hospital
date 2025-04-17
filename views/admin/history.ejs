@@ -1,0 +1,71 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="history_details" method="post" class="history_control" enctype="multipart/form-data">
+            <h5>Histroy Title Left</h5>
+     <input type="text" name="histroy_title_left" class="form-control" placeholder="Histroy Title">
+<br>
+<h5>Histroy  Description Left</h5>
+<input type="text" name="histroy_description_left" class="form-control" placeholder="Histroy Description">
+<br>
+<h5>Histroy Title Right</h5>
+<input type="text" name="histroy_title_right" class="form-control" placeholder="Histroy Title">
+<br>
+<h5>Histroy  Description Right</h5>
+<input type="text" name="histroy_description_right" class="form-control" placeholder="Histroy Description">
+<br>
+
+
+           <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+    </form>
+
+<br>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Histroy ID</th>
+            <th>Histroy Title Left</th>
+            <th>Histroy  Description Left</th>
+            <th>Histroy Title Right</th>
+            <th>Histroy  Description Right</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% history.map(function(row,i){ %>
+        <tr>
+            <td><%= i+1 %></td>
+          
+            <td><%= row.histroy_title_left %></td>
+<td><%= row.histroy_descritdtion_left %></td>
+<td><%= row.histroy_title_right %></td>
+<td><%= row.histroy_description_right %></td>
+           
+           <td>
+                <td>
+                    <a href="/admin/history_edit/<%= row.history_id %>" class="btn btn-primary">Edit</a>
+                    <hr>
+                    <a href="/admin/history_delete/<%= row.history_id %>" class="btn btn-danger" 
+                       onclick="return confirm('Are you sure you want to delete this history?');">
+                       Delete
+                    </a>
+                </td>
+                
+            </td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+</div>
+</div>
+<%-include("footer.ejs"); %>
+
+<!-- CREATE TABLE history (
+   history_id INT AUTO_INCREMENT PRIMARY KEY,
+   histroy_title_left text,
+           histroy_descritdtion_left text,
+           histroy_title_right text,
+           histroy_description_right text
+  
+); -->

@@ -1,0 +1,60 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="policy_details" method="post" class="policy_details" enctype="multipart/form-data">
+           
+           <h5>
+           Policy Title
+            </h5>
+             <input type="text" class="form-control" name="policy_title" placeholder=" Policy Title" required>
+             <br>
+            <h5>
+                Policy Description
+            </h5>
+            <input type="text" class="form-control" name="policy_description" placeholder=" Policy Description" required>
+            <br>
+           <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+    </form>
+
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Contact ID</th>
+         
+            <th>Policy Title</th>
+            <th>Policy Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% policy.map(function(row,i){ %>
+        <tr>
+            <td><%= i+1 %></td>
+          
+            <td><%= row.policy_title %></td>
+            <td><%= row.policy_description %></td>
+           <td>
+                <td>
+                    
+                    <a href="/admin/policy_delete/<%= row.policy_id %>" class="btn btn-danger" 
+                       onclick="return confirm('Are you sure you want to delete this policy?');">
+                       Delete
+                    </a>
+                </td>
+                
+            </td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+</div>
+</div>
+<%-include("footer.ejs"); %>
+
+<!-- CREATE TABLE policy (
+    policy_id INT AUTO_INCREMENT PRIMARY KEY,
+    policy_title text,
+    policy_description text
+
+); -->

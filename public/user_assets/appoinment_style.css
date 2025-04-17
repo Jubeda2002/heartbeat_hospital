@@ -1,0 +1,316 @@
+
+.appoinment-sec{
+    width: 100%;
+    height: 850px;
+    background:aliceblue;
+    display: flex;
+    margin-bottom: 0;
+    float: left;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+p {
+    text-align: center;
+    color:black;
+    font-size: 14px;
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+input, textarea , select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color:red ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color:#28a745;
+}
+.form-container {
+    margin-top: 30px;
+    width: 40%;
+    margin-left: 4%;
+
+    padding: 20px;
+    height: 780px;
+    border-radius: 10px;
+   background: white;
+box-shadow: 20px 20px 60px #bebebe,
+       -20px -20px 60px #ffffff;
+}
+.guidelines {
+    width: 30%;
+    margin-top: 30px;
+    margin-left: 13%;
+    background: #fff;
+    padding: 20px;
+    height: 350px;
+    border-radius: 50px;
+
+    box-shadow:rgb(255, 212, 212) 0px 25px 50px -12px inset, rgba(242, 217, 217, 0.3) 0px 18px 26px -18px inset;
+
+    border-radius: 10px;
+   
+}
+.form-container h2{
+    text-align: center;
+    color: red ;
+    font-size: 40px;
+    font-weight: bold;
+}
+.guidelines h3 {
+    text-align: center;
+    color: red ;
+    font-size: 30px;
+    font-weight: bold;
+}
+.guidelines ul {
+    list-style-type: disc;
+    padding-left: 20px;
+
+
+}
+
+@media (max-width: 768px) {
+   .appoinment-sec{
+    flex-direction: column;
+    float: left;
+    height: 1400px;
+   }
+    .guidelines{
+        width: 90%;
+       margin-left: 5%;
+       height: auto;
+       float: left;
+       height: 400px;
+    }
+    .form-container{
+        width: 90%;
+        margin-left: 5%;
+        height: 850px;
+        margin-bottom:10% ;
+        float: left;
+       
+    }
+  
+  }
+  @media (min-width: 767px) and (max-width: 1024px) {
+
+
+    .appoinment-sec{
+        flex-direction: column;
+        float: left;
+        height: 1050px;
+       }
+        .guidelines{
+            width: 80%;
+           margin-left: 10%;
+     
+           float: left;
+           height: 200px;
+        }
+        .form-container{
+            width: 80%;
+            margin-left: 10%;
+            height: 850px;
+            margin-bottom:10% ;
+            float: left;
+           
+        }
+         }
+
+
+         @media (max-width: 767px){
+            .container-fluid{
+              width: 100%;
+              margin: 0;
+              padding: 0;
+              gap: 0;
+            }
+      .navbar-custom img{
+      display: none;
+      }
+            .emergency-btn{
+        width: 150px;
+        font-size: 10px;
+      }
+      .appointment-btn {
+        width: 120px;
+        font-size: 10px;
+     
+      
+      }
+      .navbar-toggler{
+        margin-left:5px ;
+        width: 50px;
+      }
+        
+          }
+
+         @media (max-width: 767px){
+   
+            .footer{
+              width: 100%;
+          
+            
+              display: flex;
+
+              flex-direction: column;
+             }
+             .footer1{
+              width: 80%;
+              margin-left: 9%;
+             
+             }
+             .footer1 p{
+              font-size: 18px;
+             }
+             .footer-links{
+              width: 90%;
+              margin-top: 10%;
+              height: 300px;
+             }
+             .footer-links h3{
+              margin-left: 8%;
+             }
+             .footer-info{
+              width: 80%;
+              margin-top: 8%;
+              margin-left: 8%;
+              height: 200px;
+              height: 200px;
+              text-align: left;
+           
+             }
+             .footer-info h2{
+                text-align: left;
+
+             }
+             .footer-info p{
+                text-align: left;
+
+             }
+
+             .footer-schedule{
+              width: 90%;
+              margin-top: 0;
+             }
+             .footer-schedule h2{
+                text-align: left;
+
+             }
+            
+             .copyright{
+              width: 100%;
+            
+             }
+            
+          
+          }
+
+
+
+          @media (min-width: 767px) and (max-width: 1024px){
+            .container-fluid{
+                width: 100%;
+                
+              }
+        .navbar-custom img{
+     
+        margin-left: 10%;
+        }
+              .emergency-btn{
+          width: 200px;
+          font-size: 15px;
+        }
+        .appointment-btn {
+          width: 150px;
+          font-size: 15px;
+       
+        
+        }
+        .navbar-toggler{
+         
+          width: 50px;
+
+        }
+          
+          }
+
+           @media (min-width: 767px) and (max-width: 1024px){
+           
+            .footer{
+              width: 100%;
+          
+            
+              display: flex;
+
+              flex-direction: column;
+             }
+             .footer1{
+              width: 80%;
+              margin-left: 9%;
+             
+             }
+             .footer1 p{
+              font-size: 18px;
+             }
+             .footer-links{
+              width: 90%;
+              margin-top: 5%;
+              height: 200px;
+             }
+             .footer-links h3{
+              margin-left: 5%;
+             }
+             .footer-info{
+              width: 80%;
+              margin-top: 4%;
+              margin-left: 10%;
+              height: 200px;
+              height: 200px;
+              text-align: left;
+           
+             }
+             .footer-info h2{
+                text-align: left;
+
+             }
+             .footer-info p{
+                text-align: left;
+
+             }
+
+             .footer-schedule{
+              width: 90%;
+              margin-top: 0;
+             }
+             .footer-schedule h2{
+                text-align: left;
+                margin-left: 4%;
+             }
+            
+             .copyright{
+              width: 100%;
+            
+             }
+            
+          
+          }

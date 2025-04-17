@@ -1,0 +1,67 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="services_details" method="post" class="services_form" enctype="multipart/form-data">
+            <!-- <h1 class="h3 mb-3"><strong>Add</strong> Doctors Details</h1> -->
+            <!-- <h5>Services Icon</h5>
+            <input type="file" name="services_icon" class="form-control"> -->
+            <h5>Services Icon</h5>
+
+            <select name="services_icon" class="form-control">
+                <% let icons = ["bi-heart-pulse", "bi-hospital", "bi-clipboard2-pulse", "bi-gear", "bi-lightbulb"]; %>
+                <% icons.forEach(icon => { %>
+                    <option value="<%= icon %>"><%= icon %></option>
+                <% }) %>
+            </select>
+            
+             <br>       
+            <h5>Services Title</h5>
+                 <input type="text" name="services_title" class="form-control" placeholder="Services Title">
+                 <br>
+                    <h5>Services Description</h5>
+                    <textarea name="services_description" class="form-control" placeholder="Services Description"></textarea>
+                    <br>
+                    <button class="btn btn-lg btn-primary" type="submit">Add Services</button>
+            </form>
+            </div>
+        </div>
+        <br>
+       
+      <table>
+        <tr>
+            <th>services ID</th>
+            <th>Services Icon</th>
+            <th>Services Title</th>
+            <th>services Description</th>
+            <th>Action</th>
+        </tr>
+        <% services.map(function(row,i){ %>
+        <tr>
+            <td><%= i+1%></td>
+            <!-- <td><img src="/admin_assets/services/<%= row.services_icon %>"></td> -->
+            <td><i class="<%= row.services_icon %>" ></i></td>
+            <td><%= row.services_title %></td>
+            <td><%= row.services_description %></td>
+            <td>
+                <td>
+                    <a href="/admin/services_edit/<%= row.services_id%>" class="btn btn-primary">Edit</a>
+                    <a href="/admin/services_delete/<%= row.services_id%>" class="btn btn-danger" 
+                       onclick="return confirm('Are you sure you want to delete this record?');">
+                       Delete
+                    </a>
+                </td>
+                
+            </td>
+        </tr>
+        <% }); %>
+      </table>
+
+     
+            <%-include("footer.ejs"); %>
+     
+            <!-- CREATE TABLE services (
+                services_id INT AUTO_INCREMENT PRIMARY KEY,
+                services_icon VARCHAR(50),  -- Store Bootstrap Icon class name
+                services_title TEXT,
+                services_description TEXT
+            ); -->

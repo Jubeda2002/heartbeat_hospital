@@ -1,0 +1,142 @@
+
+<%-include("navbar.ejs")%>
+<div class="icons">
+ <a href=""><img src="/user_assets/IMAGES/facebook.png" alt=""></a> 
+ <a href=""><img src="/user_assets/IMAGES/insta-removebg-preview.png" alt=""></a> 
+  <a href="">  <img src="/user_assets/IMAGES/whatsapp.png" alt=""></a> 
+</div>
+
+<section class="gallery">
+  <div class="gallery-content">
+      <h1 class="text-light">Compassion in Every Heartbeat</h1>
+      <p class="text-light"> Explore our state-of-the-art cardiac care facilities.</p>
+      <div class="gallery-buttons">
+          <a href="appoinment.ejs" class="btn btn-primary">Book an Appointment</a>
+          <a href="tel:+919225539376" class="btn btn-secondary"> <i class="fas fa-phone"></i> +91 92255 39376</a>
+      </div>
+  </div>
+</section>
+
+    <div class=" gallery-container">
+      <h2 class="gallery-title">Our Heart Clinic Gallery</h2>
+      <%gallary.map((row,i)=>{ %>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <!-- <img src="/IMAGES/heartdepa1.png" alt=""> -->
+              <img src="/admin_assets/gallery/<%= row.gallery_image %>" class="d-block w-100" alt="...">
+             </div>
+            <div class="flip-card-back">
+            <!-- <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eligendi quibusdam animi corrupti ut voluptatum vero in obcaecati libero commodi, 
+              id tempore eius ex quia debitis ea ratione? Optio, qui.</h6> -->
+              <p class="text-light"><%=row.gallery_description%></p>
+              
+            </div>
+        </div>
+
+        </div>
+        <%})%>  
+        <!-- <div class="flip-card">
+          <div class="flip-card-inner">
+              <div class="flip-card-front">
+       
+            <img src="/IMAGES/hd2.png" alt="">   </div>
+            <div class="flip-card-back">
+              <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eligendi quibusdam animi corrupti ut voluptatum vero in obcaecati libero commodi, 
+                id tempore eius ex quia debitis ea ratione? Optio, qui.</h6>
+                </div>
+          </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+            <img src="/IMAGES/hd3.png" alt="">   </div>
+
+            <div class="flip-card-back">
+              <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eligendi quibusdam animi corrupti ut voluptatum vero in obcaecati libero commodi, 
+                id tempore eius ex quia debitis ea ratione? Optio, qui.</h6>
+                </div>
+          </div>
+          </div>
+
+
+          
+          <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="/IMAGES/hd4.png" alt="">   </div>
+
+            <div class="flip-card-back">
+              <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eligendi quibusdam animi corrupti ut voluptatum vero in obcaecati libero commodi, 
+                id tempore eius ex quia debitis ea ratione? Optio, qui.</h6>
+                </div>
+          </div>
+          </div>
+          
+       
+          <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="/IMAGES/hd5.png" alt="">
+                </div>
+            <div class="flip-card-back">
+              <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eligendi quibusdam animi corrupti ut voluptatum vero in obcaecati libero commodi, 
+                id tempore eius ex quia debitis ea ratione? Optio, qui.</h6>
+                </div>
+          </div>
+          </div>
+       
+          <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="/IMAGES/hd6.png" alt="">
+                </div>
+            <div class="flip-card-back">
+              <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eligendi quibusdam animi corrupti ut voluptatum vero in obcaecati libero commodi, 
+                id tempore eius ex quia debitis ea ratione? Optio, qui.</h6>
+                </div>
+          </div>
+        </div>
+         
+           
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="/IMAGES/hd7.png" alt="">
+                  </div>
+              <div class="flip-card-back">
+                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eligendi quibusdam animi corrupti ut voluptatum vero in obcaecati libero commodi, 
+                  id tempore eius ex quia debitis ea ratione? Optio, qui.</h6>
+                  </div>
+            </div>
+            </div>
+            
+          
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="/IMAGES/hd8.png" alt="">   </div>
+
+              <div class="flip-card-back">
+                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eligendi quibusdam animi corrupti ut voluptatum vero in obcaecati libero commodi, 
+                  id tempore eius ex quia debitis ea ratione? Optio, qui.</h6>
+                  </div>
+            </div>
+            </div>
+
+          
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="/IMAGES/hd9.png" alt="">   </div>
+
+              <div class="flip-card-back">
+                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eligendi quibusdam animi corrupti ut voluptatum vero in obcaecati libero commodi, 
+                  id tempore eius ex quia debitis ea ratione? Optio, qui.</h6>
+                  </div>
+            </div>
+            </div>  -->
+
+    </div>
+    <%-include("footer.ejs")%>

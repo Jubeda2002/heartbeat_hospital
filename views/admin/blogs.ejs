@@ -1,0 +1,56 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="blogs_details" method="post" class="blogs_form" enctype="multipart/form-data">
+            <!-- <h1 class="h3 mb-3"><strong>Add</strong> Doctors Details</h1> -->
+            <h5>Blogs Image</h5>
+            <input type="file" name="blogs_image" class="form-control">
+             <br>       
+            <h5>Blogs Title</h5>
+                 <input type="text" name="blogs_title" class="form-control" placeholder="Blogs Title">
+                 <br>
+                    <h5>Blogs Description</h5>
+                    <textarea name="blogs_description" class="form-control" placeholder="Blogs Description"></textarea>
+                    <br>
+                    <button class="btn btn-lg btn-primary" type="submit">Add Blogs</button>
+            </form>
+            </div>
+        </div>
+        <br>
+       
+      <table>
+        <tr>
+            <th>Blogs ID</th>
+            <th>Blogs Image</th>
+            <th>Blogs Description</th>
+            <th>Action</th>
+        </tr>
+        <% blogs.map(function(row,i){ %>
+        <tr>
+            <td><%= i+1%></td>
+            <td><img src="/admin_assets/blogs/<%= row.blogs_image %>" style="width: 100px; height: 100px;"></td>
+            <td><%= row.blogs_title %></td>
+            <td><%= row.blogs_description %></td>
+            <td>
+                <td>
+                    <a href="/admin/blogs_edit/<%= row.blogs_id%>" class="btn btn-primary">Edit</a>
+                    <a href="/admin/blogs_delete/<%= row.blogs_id%>" class="btn btn-danger" 
+                       onclick="return confirm('Are you sure you want to delete this record?');">
+                       Delete
+                    </a>
+                </td>
+                
+            </td>
+        </tr>
+        <% }); %>
+      </table>
+
+     
+            <%-include("footer.ejs"); %>
+     
+        <!-- CREATE TABLE blogs (
+            blogs_id INT AUTO_INCREMENT PRIMARY KEY,
+             blogs_image TEXT,
+            blogs_title text,
+            blogs_description TEXT
+        ) -->

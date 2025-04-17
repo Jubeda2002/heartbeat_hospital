@@ -1,0 +1,61 @@
+<%-include("navbar.ejs"); %>
+<div class="row">
+    <div class="col-12">
+        <form action="facility_details" method="post" class="facility_form" enctype="multipart/form-data">
+           
+           <h5>
+           Facility Image
+            </h5>
+            <input type="file" name="facility_image" class="form-control"  required>
+             <br>
+            <h5>
+                Facility Title
+            </h5>
+            <input type="text" class="form-control" name="facility_title" placeholder="   Facility Title" required>
+            <br>
+           <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+    </form>
+
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+         
+            <th>Facility Image</th>
+            <th>Facility Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% facility.map(function(row,i){ %>
+        <tr>
+            <td><%= i+1 %></td>
+          
+            <td><img src="/admin_assets/home/<%= row.facility_image %>" style="width: 100px; height: 100px;"></td>
+        
+            <td><%= row.facility_title %></td>
+           <td>
+                <td>
+                    
+                    <a href="/admin/facility_delete/<%= row. facility_id %>" class="btn btn-danger" 
+                       onclick="return confirm('Are you sure you want to delete this policy?');">
+                       Delete
+                    </a>
+                </td>
+                
+            </td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+</div>
+</div>
+<%-include("footer.ejs"); %>
+
+<!-- CREATE TABLE facility (
+    facility_id INT AUTO_INCREMENT PRIMARY KEY,
+    facility_image text,
+    facility_title text
+
+); -->
