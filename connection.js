@@ -1,4 +1,4 @@
-var mysql=require("mysql");
+var mysql=require("mysql2");
 var util=require("util");
 var conn=mysql.createConnection({
 	"host":"bjnmpeouy2bpkvj9fgrb-mysql.services.clever-cloud.com",
