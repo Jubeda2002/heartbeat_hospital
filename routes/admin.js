@@ -975,7 +975,7 @@ router.post("/policy_details",async function(req,res){
 router.get("/policy_delete/:id", async function (req, res) {
     try {
         let policyId = req.params.id;
-        let sql = `DELETE FROMpolicy WHERE policy_id = ${policyId}`;
+        let sql = `DELETE FROM policy WHERE policy_id = ${policyId}`;
         await exe(sql);
         res.redirect("/admin/Privacy_Policy");
     } catch (err) {
