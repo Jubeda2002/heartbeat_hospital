@@ -11,6 +11,7 @@
     "heartbeat_hospital_project": "file:",
     "mysql": "^2.18.1"
   },
+
   "name": "heartbeat_hospital_project",
   "version": "1.0.0",
   "main": "index.js",
